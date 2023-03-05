@@ -103,8 +103,21 @@ packer.startup({
     use("onsails/lspkind-nvim")
     use("tami5/lspsaga.nvim")
 
+    -- 代码格式化
+    use {
+      'jose-elias-alvarez/null-ls.nvim',
+      requires = 'nvim-lua/plenary.nvim'
+    }
+
     -- Lua 增强
-    use("folke/neodev.nvim")
+    use 'folke/neodev.nvim'
+    -- JSON 增强
+    use 'b0o/schemastore.nvim'
+
+    -- nvim-dap
+    use 'mfussenegger/nvim-dap'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'rcarriga/nvim-dap-ui'
 
   end,
   config = {
