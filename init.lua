@@ -14,3 +14,5 @@ require("plugin-config")
 require("lsp.setup")
 -- 自动补全
 require("cmp.setup")
+-- 格式化
+require("format.setup")

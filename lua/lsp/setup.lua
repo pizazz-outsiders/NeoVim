@@ -31,7 +31,11 @@ mason.setup({
 mason_config.setup({
   ensure_installed = {
     "lua_ls",
-    "pyright"
+    "pyright",
+    "clangd",
+    "cmake",
+    "jsonls",
+    "bashls"
   }
 })
 
@@ -39,6 +43,10 @@ local servers = {
   -- lua
   lua_ls = require("lsp.config.lua"),
   pyright = require("lsp.config.pyright"),
+  clangd = require("lsp.config.clangd"),
+  cmake = require("lsp.config.cmake"),
+  jsonls = require("lsp.config.jsonls"),
+  bashls = require("lsp.config.bashls")
 }
 
 for name, config in pairs(servers) do
