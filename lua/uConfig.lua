@@ -1,13 +1,9 @@
 local M = {
   keys = {
     leader_key = " ",
+  },
 
-    n_v_5j = "<C-j>",
-    n_v_5k = "<C-k>",
-
-    n_v_10k = "<C-u>",
-    n_v_10j = "<C-d>",
-
+  cmp = {
     -- cmp 快捷键
     cmp_complete = "<C-n>",
     cmp_abort = "<C-n>",
@@ -37,6 +33,7 @@ local M = {
     ts_fix_all = "gf",
     ts_goto_source = "gD",
   },
+
   plugin = {
     NvimTree = {
       NvimTreeToggle = "<C-e>",

@@ -21,11 +21,13 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+local cmpkey = config.cmp
+
 local mapping = {
   -- 出现补全
-  [config.keys.cmp_complete] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+  [cmpkey.cmp_complete] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   -- 取消
-  [config.keys.cmp_abort] = cmp.mapping({
+  [cmpkey.cmp_abort] = cmp.mapping({
     i = cmp.mapping.abort(),
     c = cmp.mapping.close(),
   }),
@@ -33,18 +35,18 @@ local mapping = {
   -- 确认
   -- Accept currently selected item. If none selected, `select` first item.
   -- Set `select` to `false` to only confirm explicitly selected items.
-  [config.keys.cmp_confirm] = cmp.mapping.confirm({
+  [cmpkey.cmp_confirm] = cmp.mapping.confirm({
     select = true,
     behavior = cmp.ConfirmBehavior.Replace,
   }),
   -- 如果窗口内容太多，可以滚动
-  [config.keys.cmp_scroll_doc_up] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-  [config.keys.cmp_scroll_doc_down] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+  [cmpkey.cmp_scroll_doc_up] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+  [cmpkey.cmp_scroll_doc_down] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 
   -- 上一个
-  [config.keys.cmp_select_prev_item] = cmp.mapping.select_prev_item(),
+  [cmpkey.cmp_select_prev_item] = cmp.mapping.select_prev_item(),
   -- 下一个
-  [config.keys.cmp_select_next_item] = cmp.mapping.select_next_item(),
+  [cmpkey.cmp_select_next_item] = cmp.mapping.select_next_item(),
 }
 
 cmp.setup({
